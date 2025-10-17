@@ -1,8 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"AuthInGo/app"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
-	fmt.Println("This is a simple Go program.")
+    
+	cfg :=app.Config{
+		Addr: ":3001",
+	}
+
+	app := app.Application{
+		Config: cfg,
+	}
+	app.Run()
 }
